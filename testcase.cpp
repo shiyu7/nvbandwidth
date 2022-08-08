@@ -180,8 +180,8 @@ void Testcase::allHostBidirHelper(unsigned long long size, MemcpyOperation &memc
 
         for (int interferenceDeviceId = 0; interferenceDeviceId < deviceCount; interferenceDeviceId++) {
             // Double the size of the interference copy to ensure it interferes correctly
-            aNodes.push_back(new HostNode(2 * size, deviceId));
-            bNodes.push_back(new DeviceNode(2 * size, deviceId));
+            aNodes.push_back(new HostNode(2 * size, interferenceDeviceId));
+            bNodes.push_back(new DeviceNode(2 * size, interferenceDeviceId));
 
             if (interferenceDeviceId == deviceId) {
                 continue;
